@@ -99,7 +99,7 @@ const NavFirstItem: React.FC<NavItemProps> = ({
         className={`relative px-6 py-4 font-bold text-black block 
           before:content-[''] before:absolute before:inset-0 before:-skew-x-12
           before:bg-white before:transition before:duration-300 
-          before:hover:bg-gray-500 
+          before:hover:bg-blue
           ${isLogin ? "before:bg-[#F8F8F8] before:hover:bg-gray-500" : ""}`}
       >
         {/* #EAEAEA */}
@@ -109,6 +109,7 @@ const NavFirstItem: React.FC<NavItemProps> = ({
   );
 };
 
+// community
 const NavSecItem: React.FC<NavItemProps> = ({
   href,
   label,
@@ -116,18 +117,71 @@ const NavSecItem: React.FC<NavItemProps> = ({
   className = "",
 }) => {
   return (
-    <Link href={href} className={`relative block ${className} text-2xl`}>
-      <span
-        className={`relative px-6 py-4 font-bold text-black block 
-          before:content-[''] before:absolute before:inset-0 before:-skew-x-12
-          before:bg-[#F4E1C1] before:transition before:duration-300 
-          before:hover:bg-gray-500 
-          ${isLogin ? "before:bg-[#F8F8F8] before:hover:bg-gray-500" : ""}`}
-      >
-        {/* #EAEAEA */}
-        <span className="relative z-10">{label}</span>
-      </span>
-    </Link>
+    <ul className="group flex flex-col relative">
+      <li>
+        <Link href={href} className={`relative block ${className} text-2xl`}>
+        <span
+          className={`relative px-6 py-4 font-bold text-black block 
+            before:content-[''] before:absolute before:inset-0 before:-skew-x-12
+            before:bg-[#F4E1C1] before:transition before:duration-300 
+            before:hover:bg-gray-500 
+            ${isLogin ? "before:bg-[#F8F8F8] before:hover:bg-gray-500" : ""}`}
+        >
+          {/* #EAEAEA */}
+          <span className="relative z-10">{label}</span>
+        </span>
+      </Link>
+      </li>
+      
+      <ul className={`hidden group-hover:block absolute font-bold text-black 
+            before:absolute before:inset-0 bottom-100 before:-skew-x-12
+            before:bg-[#F4E1C1] before:transition before:duration-300 
+            before:hover:bg-gray-500 z-50
+            ${isLogin ? "before:bg-[#F8F8F8] before:hover:bg-gray-500" : ""}`}>
+        <li className="z-50">
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/brixpage?igsh=NTc4MTIwNjQ2YQ%3D%3D&utm_source=qr"
+            className="bg-icons flex h-10 w-10 items-center justify-center rounded-lg text-black relative z-10"
+          >
+            Instagram
+          </Link>
+        </li>
+        <li>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/michael-rosas-32ba71330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+            className="bg-icons flex h-10 w-10 items-center justify-center rounded-lg text-black relative z-10"
+          >
+            LinkedIn
+          </Link>
+        </li>
+        <li>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://youtube.com/@brixpage?si=pzWFW4yHFNdg5UVM"
+            className="bg-icons flex h-10 w-10 items-center justify-center rounded-lg text-black relative z-10"
+          >
+            Youtube
+          </Link>
+        </li>
+        <li>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.reddit.com/r/BRIXPAGE/s/OYpUDHHNE4"
+            className="bg-icons flex h-10 w-10 items-center justify-center rounded-lg text-black relative z-10"
+          >
+            Reddit
+          </Link>
+        </li>
+      </ul>
+
+  </ul>
+    
   );
 };
 
